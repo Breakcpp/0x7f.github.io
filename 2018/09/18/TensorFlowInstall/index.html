@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="TensorFlow 简介TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。 官网上对TensorFlow的介绍是，一个使用数据流图(data flow graphs)技术来进行数值计算的开源软件库。数据流图中的节点，代表数值运算；节点节点之间">
+<meta name="keywords" content="Mechine Learing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于MacOs的TensorFlow安装">
+<meta property="og:url" content="http://yoursite.com/2018/09/18/TensorFlowInstall/index.html">
+<meta property="og:site_name" content="0x7f">
+<meta property="og:description" content="TensorFlow 简介TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。 官网上对TensorFlow的介绍是，一个使用数据流图(data flow graphs)技术来进行数值计算的开源软件库。数据流图中的节点，代表数值运算；节点节点之间">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-24T09:30:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于MacOs的TensorFlow安装">
+<meta name="twitter:description" content="TensorFlow 简介TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。 官网上对TensorFlow的介绍是，一个使用数据流图(data flow graphs)技术来进行数值计算的开源软件库。数据流图中的节点，代表数值运算；节点节点之间">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2018/09/18/TensorFlowInstall/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>基于MacOs的TensorFlow安装 | 0x7f</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">0x7f</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/TensorFlowInstall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="0x7f-Ye">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="0x7f">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于MacOs的TensorFlow安装
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-18 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-18T00:00:00+08:00">2018-09-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-24 17:30:54" itemprop="dateModified" datetime="2019-04-24T17:30:54+08:00">2019-04-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="TensorFlow-简介"><a href="#TensorFlow-简介" class="headerlink" title="TensorFlow 简介"></a>TensorFlow 简介</h1><p>TensorFlow是Google在2015年11月份开源的人工智能系统（Github项目地址），是之前所开发的深度学习基础架构DistBelief的改进版本，该系统可以被用于语音识别、图片识别等多个领域。</p>
+<p>官网上对TensorFlow的介绍是，一个使用数据流图(data flow graphs)技术来进行数值计算的开源软件库。数据流图中的节点，代表数值运算；节点节点之间的边，代表多维数据(tensors)之间的某种联系。你可以在多种设备（含有CPU或GPU）上通过简单的API调用来使用该系统的功能。TensorFlow是由Google Brain团队的研发人员负责的项目。</p>
+<p>什么是数据流图(Data Flow Graph)<br>数据流图是描述有向图中的数值计算过程。有向图中的节点通常代表数学运算，但也可以表示数据的输入、输出和读写等操作；有向图中的边表示节点之间的某种联系，它负责传输多维数据(Tensors)。图中这些tensors的flow也就是TensorFlow的命名来源。</p>
+<p>节点可以被分配到多个计算设备上，可以异步和并行地执行操作。因为是有向图，所以只有等到之前的入度节点们的计算状态完成后，当前节点才能执行操作。</p>
+<h2 id="TensorFlow的特性"><a href="#TensorFlow的特性" class="headerlink" title="TensorFlow的特性"></a>TensorFlow的特性</h2><h3 id="1-灵活性"><a href="#1-灵活性" class="headerlink" title="1 灵活性"></a>1 灵活性</h3><p>TensorFlow不是一个严格的神经网络工具包，只要你可以使用数据流图来描述你的计算过程，你可以使用TensorFlow做任何事情。你还可以方便地根据需要来构建数据流图，用简单的Python语言来实现高层次的功能。</p>
+<h3 id="2-可移植性"><a href="#2-可移植性" class="headerlink" title="2 可移植性"></a>2 可移植性</h3><p>TensorFlow可以在任意具备CPU或者GPU的设备上运行，你可以专注于实现你的想法，而不用去考虑硬件环境问题，你甚至可以利用Docker技术来实现相关的云服务。</p>
+<h3 id="3-提高开发效率"><a href="#3-提高开发效率" class="headerlink" title="3 提高开发效率"></a>3 提高开发效率</h3><p>TensorFlow可以提升你所研究的东西产品化的效率，并且可以方便与同行们共享代码。</p>
+<h3 id="4-支持语言选项"><a href="#4-支持语言选项" class="headerlink" title="4 支持语言选项"></a>4 支持语言选项</h3><p>目前TensorFlow支持Python和C++语言。（但是你可以自己编写喜爱语言的SWIG接口）</p>
+<h3 id="5-充分利用硬件资源，最大化计算性能"><a href="#5-充分利用硬件资源，最大化计算性能" class="headerlink" title="5 充分利用硬件资源，最大化计算性能"></a>5 充分利用硬件资源，最大化计算性能</h3><h2 id="TensorFlow安装"><a href="#TensorFlow安装" class="headerlink" title="TensorFlow安装"></a>TensorFlow安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install HomeBrew</span><br><span class="line">$ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</span><br><span class="line">Install PIP</span><br><span class="line">sudo easy_install pip</span><br><span class="line">Install Tensorflow</span><br><span class="line">pip install tensorflow==1.5</span><br></pre></td></tr></table></figure>
+<p>因为Tensorflow支持的numpy科学计算库不高于1.14.5 不小1.13.5所以我们安装1.14.5来确保Tensorflow 可以正确的使用.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Install numpy</span><br><span class="line">pip install numpy==1.14.5</span><br></pre></td></tr></table></figure>
+<p>一般安装Tensorflow时候 会在gracio时候卡顿一段时间,所以我们优先下载可以更快的安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Install grpcio</span><br><span class="line">pip install grpcio==1.9</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">测试(Test)</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 NumPy 生成假数据(phony data), 总共 100 个点.</span></span><br><span class="line">x_data = np.float32(np.random.rand(<span class="number">2</span>, <span class="number">100</span>)) <span class="comment"># 随机输入</span></span><br><span class="line">y_data = np.dot([<span class="number">0.100</span>, <span class="number">0.200</span>], x_data) + <span class="number">0.300</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造一个线性模型</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">1</span>]))</span><br><span class="line">W = tf.Variable(tf.random_uniform([<span class="number">1</span>, <span class="number">2</span>], <span class="number">-1.0</span>, <span class="number">1.0</span>))</span><br><span class="line">y = tf.matmul(W, x_data) + b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最小化方差</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y - y_data))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.5</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化变量</span></span><br><span class="line">init = tf.initialize_all_variables()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动图 (graph)</span></span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拟合平面</span></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> xrange(<span class="number">0</span>, <span class="number">201</span>):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    <span class="keyword">if</span> step % <span class="number">20</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">print</span> step, sess.run(W), sess.run(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到最佳拟合结果 W: [[0.100  0.200]], b: [0.300]</span></span><br></pre></td></tr></table></figure>
+<h2 id="基于-VirtualEnv-的安装"><a href="#基于-VirtualEnv-的安装" class="headerlink" title="基于 VirtualEnv 的安装"></a>基于 VirtualEnv 的安装</h2><p>首先, 安装所有必备工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 在 Linux 上:</span><br><span class="line">$ sudo apt-get install python-pip python-dev python-virtualenv</span><br><span class="line"></span><br><span class="line"># 在 Mac 上:</span><br><span class="line">$ sudo easy_install pip  # 如果还没有安装 pip</span><br><span class="line">$ sudo pip install --upgrade virtualenv</span><br><span class="line">接下来, 建立一个全新的 virtualenv 环境. 为了将环境建在 ~/tensorflow 目录下, 执行:</span><br><span class="line"></span><br><span class="line">$ virtualenv --system-site-packages ~/tensorflow</span><br><span class="line">$ cd ~/tensorflow</span><br><span class="line">然后, 激活 virtualenv:</span><br><span class="line"></span><br><span class="line">$ source bin/activate  # 如果使用 bash</span><br><span class="line">$ source bin/activate.csh  # 如果使用 csh</span><br><span class="line">(tensorflow)$  # 终端提示符应该发生变化</span><br><span class="line">在 virtualenv 内, 安装 TensorFlow:</span><br><span class="line"></span><br><span class="line">(tensorflow)$ pip install --upgrade &lt;$url_to_binary.whl&gt;</span><br><span class="line">接下来, 使用类似命令运行 TensorFlow 程序:</span><br><span class="line"></span><br><span class="line">(tensorflow)$ cd tensorflow/models/image/mnist</span><br><span class="line">(tensorflow)$ python convolutional.py</span><br><span class="line"># 当使用完 TensorFlow</span><br><span class="line">(tensorflow)$ deactivate  # 停用 virtualenv</span><br><span class="line">$  # 你的命令提示符会恢复原样</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mechine-Learing/" rel="tag"># Mechine Learing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">0x7f-Ye</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-简介"><span class="nav-number">1.</span> <span class="nav-text">TensorFlow 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow的特性"><span class="nav-number">1.1.</span> <span class="nav-text">TensorFlow的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-灵活性"><span class="nav-number">1.1.1.</span> <span class="nav-text">1 灵活性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-可移植性"><span class="nav-number">1.1.2.</span> <span class="nav-text">2 可移植性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-提高开发效率"><span class="nav-number">1.1.3.</span> <span class="nav-text">3 提高开发效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-支持语言选项"><span class="nav-number">1.1.4.</span> <span class="nav-text">4 支持语言选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-充分利用硬件资源，最大化计算性能"><span class="nav-number">1.1.5.</span> <span class="nav-text">5 充分利用硬件资源，最大化计算性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow安装"><span class="nav-number">1.2.</span> <span class="nav-text">TensorFlow安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于-VirtualEnv-的安装"><span class="nav-number">1.3.</span> <span class="nav-text">基于 VirtualEnv 的安装</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">0x7f-Ye</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
