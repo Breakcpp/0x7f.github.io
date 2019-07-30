@@ -96,24 +96,17 @@
 
 
 
-  <meta name="description" content="什么是 vim？Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。 连 vim 的官方网站 http://www.vim.org 自己也说 vim 是一个程序开发工具而不是文字处理软件。 vim">
-<meta name="keywords" content="Tools">
+  <meta name="description" content="禁用 SIP (System Integrity Protection)进入命令行恢复模式，启动时同时按住 ⌘+R+S 禁用 SIP，SIP 模式会锁定系统文件夹，开启状态无法移动系统目录的文件；SIP 模式的开启和关闭只能在恢复模式状态下运行，我曾经尝试过在 Single 模式里是无法执行这个命令的。1csrutil disable 重启 1reboot 移动 AMD 显卡驱动文件进入 Sing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIM的学习与使用">
-<meta property="og:url" content="http://yoursite.com/2019/04/27/VimLearing/index.html">
+<meta property="og:title" content="关于MacBook显卡门">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/关于MacBook显卡门/index.html">
 <meta property="og:site_name" content="0x7f">
-<meta property="og:description" content="什么是 vim？Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。 连 vim 的官方网站 http://www.vim.org 自己也说 vim 是一个程序开发工具而不是文字处理软件。 vim">
+<meta property="og:description" content="禁用 SIP (System Integrity Protection)进入命令行恢复模式，启动时同时按住 ⌘+R+S 禁用 SIP，SIP 模式会锁定系统文件夹，开启状态无法移动系统目录的文件；SIP 模式的开启和关闭只能在恢复模式状态下运行，我曾经尝试过在 Single 模式里是无法执行这个命令的。1csrutil disable 重启 1reboot 移动 AMD 显卡驱动文件进入 Sing">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/10/entry1.png">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/10/advanced1.png">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/10/morden1.png">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/10/text1.png">
-<meta property="og:updated_time" content="2019-04-27T06:33:57.000Z">
+<meta property="og:updated_time" content="2019-07-30T15:16:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VIM的学习与使用">
-<meta name="twitter:description" content="什么是 vim？Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。 连 vim 的官方网站 http://www.vim.org 自己也说 vim 是一个程序开发工具而不是文字处理软件。 vim">
-<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif">
+<meta name="twitter:title" content="关于MacBook显卡门">
+<meta name="twitter:description" content="禁用 SIP (System Integrity Protection)进入命令行恢复模式，启动时同时按住 ⌘+R+S 禁用 SIP，SIP 模式会锁定系统文件夹，开启状态无法移动系统目录的文件；SIP 模式的开启和关闭只能在恢复模式状态下运行，我曾经尝试过在 Single 模式里是无法执行这个命令的。1csrutil disable 重启 1reboot 移动 AMD 显卡驱动文件进入 Sing">
 
 
 
@@ -121,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/27/VimLearing/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/30/关于MacBook显卡门/">
 
 
 
@@ -131,7 +124,7 @@
   };
 </script>
 
-  <title>VIM的学习与使用 | 0x7f</title>
+  <title>关于MacBook显卡门 | 0x7f</title>
   
 
 
@@ -313,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/VimLearing/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/关于MacBook显卡门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="0x7f-Ye">
@@ -330,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VIM的学习与使用
+          <h1 class="post-title" itemprop="name headline">关于MacBook显卡门
 
               
             
@@ -356,7 +349,7 @@
                 
               
 
-              <time title="Created: 2019-04-27 00:00:00 / Modified: 14:33:57" itemprop="dateCreated datePublished" datetime="2019-04-27T00:00:00+08:00">2019-04-27</time>
+              <time title="Created: 2019-07-30 23:08:59 / Modified: 23:16:16" itemprop="dateCreated datePublished" datetime="2019-07-30T23:08:59+08:00">2019-07-30</time>
             
 
             
@@ -395,47 +388,26 @@
       
 
       
-        <h1 id="什么是-vim？"><a href="#什么是-vim？" class="headerlink" title="什么是 vim？"></a>什么是 vim？</h1><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。</p>
-<p>简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。</p>
-<p>连 vim 的官方网站 <a href="http://www.vim.org" target="_blank" rel="noopener">http://www.vim.org</a> 自己也说 vim 是一个程序开发工具而不是文字处理软件。</p>
-<h1 id="vim-键盘图："><a href="#vim-键盘图：" class="headerlink" title="vim 键盘图："></a>vim 键盘图：</h1><p><img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" alt="VIM"></p>
-<h2 id="vi-vim-的使用"><a href="#vi-vim-的使用" class="headerlink" title="vi/vim 的使用"></a>vi/vim 的使用</h2><p>基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：</p>
-<h3 id="命令模式："><a href="#命令模式：" class="headerlink" title="命令模式："></a>命令模式：</h3><p>用户刚刚启动 vi/vim，便进入了命令模式。</p>
-<p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
-<p>以下是常用的几个命令：</p>
-<ul>
-<li>i 切换到输入模式，以输入字符。</li>
-<li>x 删除当前光标所在处的字符。</li>
-<li>: 切换到底线命令模式，以在最底一行输入命令。</li>
-</ul>
-<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。</p>
-<p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
-<h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><p>在命令模式下按下i就进入了输入模式。</p>
-<p>在输入模式中，可以使用以下按键：</p>
-<ul>
-<li>字符按键以及Shift组合，输入字符</li>
-<li>ENTER，回车键，换行</li>
-<li>BACK SPACE，退格键，删除光标前一个字符</li>
-<li>DEL，删除键，删除光标后一个字符</li>
-<li>方向键，在文本中移动光标</li>
-<li>HOME/END，移动光标到行首/行尾</li>
-<li>Page Up/Page Down，上/下翻页</li>
-<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
-<li>ESC，退出输入模式，切换到命令模式</li>
-<li>底线命令模式</li>
-<li>在命令模式下按下:（英文冒号）就进入了底线命令模式。</li>
-</ul>
-<p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
-<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
-<ul>
-<li>q 退出程序</li>
-<li>w*  保存文件<br>按ESC键可随时退出底线命令模式。</li>
-</ul>
-<h1 id="vi-vim-使用实例"><a href="#vi-vim-使用实例" class="headerlink" title="vi/vim 使用实例"></a>vi/vim 使用实例</h1><p>使用 vi/vim 进入一般模式<br>如果你想要使用 vi 来建立一个名为 test.txt 的文件时，你可以这样做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &quot;filename.txt&quot;</span><br></pre></td></tr></table></figure></p>
-<h1 id="附加资料"><a href="#附加资料" class="headerlink" title="附加资料"></a>附加资料</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><img src="https://www.runoob.com/wp-content/uploads/2015/10/entry1.png" alt="1"></p>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p><img src="https://www.runoob.com/wp-content/uploads/2015/10/advanced1.png" alt="2"></p>
-<h2 id="增强"><a href="#增强" class="headerlink" title="增强"></a>增强</h2><p><img src="https://www.runoob.com/wp-content/uploads/2015/10/morden1.png" alt="3"></p>
-<h2 id="文字版"><a href="#文字版" class="headerlink" title="文字版"></a>文字版</h2><p><img src="https://www.runoob.com/wp-content/uploads/2015/10/text1.png" alt="4"></p>
+        <h2 id="禁用-SIP-System-Integrity-Protection"><a href="#禁用-SIP-System-Integrity-Protection" class="headerlink" title="禁用 SIP (System Integrity Protection)"></a>禁用 SIP (System Integrity Protection)</h2><p>进入命令行恢复模式，启动时同时按住 ⌘+R+S</p>
+<p>禁用 SIP，SIP 模式会锁定系统文件夹，开启状态无法移动系统目录的文件；SIP 模式的开启和关闭只能在恢复模式状态下运行，我曾经尝试过在 Single 模式里是无法执行这个命令的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csrutil disable</span><br></pre></td></tr></table></figure></p>
+<p>重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>移动 AMD 显卡驱动文件<br>进入 Single 用户模式: 启动时候按住 ⌘+S</p>
+<p>进行磁盘检测<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fsck -fy</span><br></pre></td></tr></table></figure></p>
+<p>装载 root 文件系统并获得 读写权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -uw /</span><br></pre></td></tr></table></figure></p>
+<p>创建一个目录用来移动和备份 AMD 驱动文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /AMD_Kexts/</span><br></pre></td></tr></table></figure></p>
+<p>移动所有 AMD 驱动文件到刚才创建的目录里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /System/Library/Extensions/AMD*.* /AMD_Kexts/</span><br></pre></td></tr></table></figure></p>
+<p>删除所有的驱动缓存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /System/Library/Caches/com.apple.kext.caches/</span><br></pre></td></tr></table></figure></p>
+<p>有时候 macOS 系统并不会重新生成缓存目录，所以这里我们手动创建缓存目录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /System/Library/Caches/com.apple.kext.caches/</span><br></pre></td></tr></table></figure></p>
+<p>更新驱动缓存文件的时间戳，这样系统会重新生成驱动缓存（没有 AMD 驱动缓存了）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /System/Library/Extensions/</span><br></pre></td></tr></table></figure></p>
+<p>卸载分区，来确保你的修改都已经生效了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo umount /</span><br></pre></td></tr></table></figure></p>
+<p>重新启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></p>
+<h3 id="重新启用-SIP"><a href="#重新启用-SIP" class="headerlink" title="重新启用 SIP"></a>重新启用 SIP</h3><p>如果启动正常，我们要尝试关闭 SIP 以保证系统文件的安全性，再次开启恢复模式，启动的时候按住 ⌘+R+S<br>在命令行里输入如下命令，重新开启 SIP 模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csrutil enable</span><br></pre></td></tr></table></figure></p>
+<p>重启系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改-NARAM-参数"><a href="#修改-NARAM-参数" class="headerlink" title="修改 NARAM 参数"></a>修改 NARAM 参数</h3><p>再次进入系统之后会发现刷新率特别低，任何一部操作造成的显示变化都会让机器运作好久，这时候先别管其他，先打开终端。路径是 Finder -&gt; Applications -&gt; Utilities -&gt; Terminal，然后输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram fa4ce28d-b62f-4c99-9cc3-6815686e30f9:gpu-power-prefs=%01%00%00%00</span><br></pre></td></tr></table></figure></p>
+<p>重新启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure></p>
+<p>重启后集成显卡驱动失效<br>有时候用外置移动硬盘启动系统后可能会造成驱动再次失效的问题需要重新在终端里输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram fa4ce28d-b62f-4c99-9cc3-6815686e30f9:gpu-power-prefs=%01%00%00%00</span><br></pre></td></tr></table></figure></p>
+<p>Done!</p>
 
       
     </div>
@@ -457,12 +429,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
-          
-        </div>
-      
 
       
       
@@ -472,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/JavaJDBC/" rel="next" title="JavaJDBC使用">
-                <i class="fa fa-chevron-left"></i> JavaJDBC使用
+              <a href="/2019/04/27/VimLearing/" rel="next" title="VIM的学习与使用">
+                <i class="fa fa-chevron-left"></i> VIM的学习与使用
               </a>
             
           </div>
@@ -481,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/30/关于MacBook显卡门/" rel="prev" title="关于MacBook显卡门">
-                关于MacBook显卡门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-vim？"><span class="nav-number">1.</span> <span class="nav-text">什么是 vim？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-键盘图："><span class="nav-number">2.</span> <span class="nav-text">vim 键盘图：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-vim-的使用"><span class="nav-number">2.1.</span> <span class="nav-text">vi/vim 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式："><span class="nav-number">2.1.1.</span> <span class="nav-text">命令模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入模式"><span class="nav-number">2.1.2.</span> <span class="nav-text">输入模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vi-vim-使用实例"><span class="nav-number">3.</span> <span class="nav-text">vi/vim 使用实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附加资料"><span class="nav-number">4.</span> <span class="nav-text">附加资料</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">4.1.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-number">4.2.</span> <span class="nav-text">进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强"><span class="nav-number">4.3.</span> <span class="nav-text">增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字版"><span class="nav-number">4.4.</span> <span class="nav-text">文字版</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用-SIP-System-Integrity-Protection"><span class="nav-number">1.</span> <span class="nav-text">禁用 SIP (System Integrity Protection)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重新启用-SIP"><span class="nav-number">1.1.</span> <span class="nav-text">重新启用 SIP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-NARAM-参数"><span class="nav-number">1.2.</span> <span class="nav-text">修改 NARAM 参数</span></a></li></ol></li></ol></div>
             
 
           </div>
